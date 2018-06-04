@@ -9072,10 +9072,76 @@ var _Search = __webpack_require__(329);
 
 var _Search2 = _interopRequireDefault(_Search);
 
+var _searchView = __webpack_require__(358);
+
+var searchView = _interopRequireWildcard(_searchView);
+
+var _base = __webpack_require__(357);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var search = new _Search2.default('pizza');
-search.getResults();
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+/** Global state of the app
+ * - Search object
+ * - Current recipe object
+ * - Shhopping list object
+ * - Liked recipes
+ */
+var state = {};
+
+var controlSearch = function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        var query;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+            while (1) {
+                switch (_context.prev = _context.next) {
+                    case 0:
+                        // 1) Get query from view
+                        query = searchView.getInput; //TODO
+
+                        if (!query) {
+                            _context.next = 9;
+                            break;
+                        }
+
+                        // 2) New search object and add it to state
+                        state.search = new _Search2.default(query);
+
+                        // 3) Prepare UI for results
+                        searchView.clearInput();
+                        searchView.clearResult();
+
+                        // 4) Search for recipes
+                        _context.next = 7;
+                        return state.search.getResults();
+
+                    case 7:
+                        //awaits for the results and comes back with data
+
+                        // 5) render results on UI
+                        console.log(state.search.result);
+                        searchView.renderResults(state.search.result);
+
+                    case 9:
+                    case 'end':
+                        return _context.stop();
+                }
+            }
+        }, _callee, undefined);
+    }));
+
+    return function controlSearch() {
+        return _ref.apply(this, arguments);
+    };
+}();
+
+_base.elements.searchForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    controlSearch();
+});
 
 /***/ }),
 /* 329 */
@@ -10916,6 +10982,57 @@ module.exports = function spread(callback) {
   };
 };
 
+
+/***/ }),
+/* 357 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var elements = exports.elements = {
+    searchForm: document.querySelector('.search'),
+    searchInput: document.querySelector('.search__field'),
+    searchResList: document.querySelector('.results__list')
+};
+
+/***/ }),
+/* 358 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.renderResults = exports.clearResult = exports.clearInput = exports.getInput = undefined;
+
+var _base = __webpack_require__(357);
+
+var getInput = exports.getInput = function getInput() {
+    return _base.elements.searchInput.value;
+};
+
+var clearInput = exports.clearInput = function clearInput() {
+    _base.elements.searchInput.value = '';
+};
+
+var clearResult = exports.clearResult = function clearResult() {
+    _base.elements.searchResList.innerHTML = '';
+};
+
+var renderRecipe = function renderRecipe(recipe) {
+    var markup = '\n        <li>\n        <a class="results__link results__link" href="#' + recipe.recipe_id + '>\n                <figure class="results__fig">\n                    <img src="' + recipe.image_url + '" alt="' + recipe.title + '">\n                </figure>\n                <div class="results__data">\n                    <h4 class="results__name">' + recipe.title + '</h4>\n                    <p class="results__author">' + recipe.publisher + '</p>\n                </div>\n            </a>\n        </li>\n    ';
+    _base.elements.searchResList.insertAdjacentElement('beforeend', markup);
+};
+
+var renderResults = exports.renderResults = function renderResults(recipes) {
+    recipes.forEach(renderRecipe);
+};
 
 /***/ })
 /******/ ]);
