@@ -37,3 +37,12 @@ elements.searchForm.addEventListener('submit', e => {
     controlSearch();
 });
 
+elements.searchRespages.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-inline');
+    if (btn) {
+        const goToPage = parseInt(btn.dataset.goto, 10); //handy way to have access to data using dataset
+        searchView.clearResult();
+        searchView.renderResults(state.search.result, goToPage);
+    }
+});
+
