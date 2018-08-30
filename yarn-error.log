@@ -1,0 +1,66 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Vlastik\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js start
+
+PATH: 
+  C:\Users\Vlastik\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Vlastik\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\ImageMagick-6.9.9-Q8;C:\Program Files\ImageMagick-7.0.7-Q16;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Sudowin\Clients\Console;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Microsoft VS Code\bin;C:\Ruby24-x64\bin;C:\Ruby25-x64\bin;C:\Users\Vlastik\AppData\Local\Microsoft\WindowsApps;C:\Users\Vlastik\AppData\Local\GitHubDesktop\bin;C:\Users\Vlastik\AppData\Roaming\npm;C:\Program Files\Heroku\bin;C:\Users\Vlastik\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  8.9.4
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "forkify",
+    "version": "1.0.0",
+    "description": "forkify project",
+    "main": "index.js",
+    "scripts": {
+      "dev": "webpack --mode development",
+      "build": "webpack --mode production",
+      "start": "webpack-dev-server --mode development --open"
+    },
+    "author": "Jonas Schmedtmann",
+    "license": "ISC",
+    "devDependencies": {
+      "babel-core": "^6.26.0",
+      "babel-loader": "^7.1.4",
+      "babel-preset-env": "^1.6.1",
+      "html-webpack-plugin": "^3.0.7",
+      "webpack": "^4.2.0",
+      "webpack-cli": "^2.0.12",
+      "webpack-dev-server": "^3.1.1"
+    },
+    "dependencies": {
+      "axios": "^0.18.0",
+      "babel-polyfill": "^6.26.0",
+      "fractional": "^1.0.0",
+      "uniqid": "^4.1.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Command failed.
+  Exit code: 1
+  Command: C:\WINDOWS\system32\cmd.exe
+  Arguments: /d /s /c webpack-dev-server --mode development --open
+  Directory: C:\Users\Vlastik\Desktop\forkify
+  Output:
+  
+      at ProcessTermError.MessageError (C:\Users\Vlastik\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
+      at new ProcessTermError (C:\Users\Vlastik\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:226:113)
+      at ChildProcess.<anonymous> (C:\Users\Vlastik\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
