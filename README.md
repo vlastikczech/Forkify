@@ -2,6 +2,13 @@
 
 Javascript tutorial project from Jonas Schmedtmann's Udemy Course.
 
+### Features
+
+* Search for your favorite recipes!
+* Save your recipes with a simple click
+* Automatically adjusts the ingredients depending on the serving size
+* Uses a 3rd party API to fetch the recipes
+
 ### Installation
 
 Forkify requires [Node.js](https://nodejs.org/) to run its dependencies.
@@ -31,7 +38,7 @@ $ npm run build
 #### Run webpack-dev-server:
 
 ```sh
-$ npm run watch
+$ npm run start
 ```
 
 ### Authors
