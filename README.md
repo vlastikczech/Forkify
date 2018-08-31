@@ -43,7 +43,7 @@ $ npm run start
 
 ### Authors
 
-[Jonas Schmedtmann](https://twitter.com/jonasschmedtman)
+Vlastik Walker
 
 ## License
 
