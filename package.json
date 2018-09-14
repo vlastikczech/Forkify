@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode production"
+    "start": "webpack --mode production"
   },
-  "author": "Jonas Schmedtmann",
+  "author": "Vlastik Walker",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
