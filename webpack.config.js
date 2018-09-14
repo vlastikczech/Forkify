@@ -9,7 +9,6 @@ module.exports = {
     },
     devServer: {
         contentBase: './dist',
-        port: app.listen(process.env.PORT || 5000)
     },
     plugins: [
         new HtmlWebpackPlugin({
