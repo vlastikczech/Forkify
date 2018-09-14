@@ -4,9 +4,9 @@
   "description": "forkify project",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
+    "start": "node server.js",
+    "heroku-postbuild": "webpack -p",
+    "dev": "webpack-dev-server"
   },
   "author": "Vlastik Walker",
   "license": "ISC",
