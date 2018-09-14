@@ -7,8 +7,7 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "postinstall": "npm run build",
-    "heroku-prebuild": "npm install --production=false",
-    "start": "webpack-dev-server --mode production"
+    "start": "webpack-dev-server --mode development"
   },
   "author": "Vlastik Walker",
   "license": "ISC",
