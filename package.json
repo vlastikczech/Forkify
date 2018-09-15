@@ -7,7 +7,7 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "heroku-postbuild": "npm run build",
-    "start": "webpack-dev-server --mode development"
+    "start": "node server.js"
   },
   "author": "Vlastik Walker",
   "license": "ISC",
