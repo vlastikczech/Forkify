@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "heroku-postbuild": "npm run build",
-    "start": "node server.js"
+    "postinstall": "webpack -p --config ./webpack.prod.config.js --progress",
+    "start": "npm run start"
   },
   "author": "Vlastik Walker",
   "license": "ISC",
