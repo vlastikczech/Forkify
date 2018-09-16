@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "heroku-postbuild": "npm run build",
-    "start": "npm run start"
+    "heroku-postbuild": "npm run build"
   },
   "author": "Vlastik Walker",
   "license": "ISC",
