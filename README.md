@@ -1,4 +1,4 @@
-# Forkify - tutorial project
+# Forkify
 
 Javascript tutorial project from Jonas Schmedtmann's Udemy Course.
 
@@ -48,3 +48,4 @@ Vlastik Walker
 ## License
 
 MIT
+
